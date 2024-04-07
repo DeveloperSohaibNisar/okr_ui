@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:okr_ui/components/button.dart';
 import 'package:okr_ui/components/custom_textfield.dart';
-import 'package:okr_ui/pages/signup.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignupPage extends StatelessWidget {
+  const SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,33 +35,24 @@ class LoginPage extends StatelessWidget {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                         ),
-                        'Welcome Back!',
+                        'Sign up for FREE',
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                        'and start IBS in seconds',
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.grey[700],
+                        ),
                       ),
                       SizedBox(height: 20),
                       CustomTextField1(),
-                      SizedBox(height: 20),
-                      CustomTextField2(),
-                      SizedBox(height: 20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          TextButton(
-                              onPressed: () {},
-                              child: Text(
-                                'Forgot Password?',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  color: Color.fromRGBO(91, 70, 149, 1),
-                                ),
-                              )),
-                        ],
-                      ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 30),
                       SizedBox(
                         width: 300,
                         height: 45,
                         child: MyButton(
-                          title: 'Log In',
+                          title: 'Sign Up',
                           styles: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -73,22 +63,13 @@ class LoginPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            'or login with SSO',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[700],
-                            ),
-                          )),
                     ],
                   ),
                 ),
               ),
               SizedBox(height: 20),
               Text(
-                'Don\'t have an account?',
+                'If you already have an account',
                 style: TextStyle(
                   fontSize: 16,
                   color: Colors.grey[700],
@@ -99,18 +80,14 @@ class LoginPage extends StatelessWidget {
                 width: 100,
                 height: 40,
                 child: MyButton(
-                  title: 'Sign Up',
+                  title: 'Sign In',
                   styles: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),
                   onCustomButtonPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignupPage()),
-                    );
+                    Navigator.pop(context);
                   },
                   gredient: true,
                 ),
